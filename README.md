@@ -12,7 +12,7 @@ The workflow generates deterministic synthetic power-quality waveforms, applies 
 - `configs/`: scientific design and decision policies used by the Python workflow.
 - `manifests/`: development, formal-repeatability and sealed-confirmation condition allocations.
 - `outputs/formal_analysis/`: development record-level metrics, summaries and calibration results.
-- `outputs/`: release audits and compact analysis outputs. The large processed feature databases are archived separately with the DOI-bearing data release.
+- `outputs/`: exact development, formal-repeatability and confirmation feature databases, release audits and analysis outputs.
 - `outputs/holdout_analysis/`: frozen confirmation summaries and audits.
 - `outputs/qualification_matrix/`: primary qualification matrix and compound-event status.
 - `docs/`: data dictionary, methods mapping and detailed reproduction instructions.
@@ -30,7 +30,7 @@ See `docs/REPRODUCIBILITY.md` for the analysis sequence and expected inputs and 
 
 ## Data size
 
-The GitHub release contains the complete Python workflow, configurations, manifests and compact analysis outputs. The three large SQLite feature databases are distributed through the DOI-bearing data archive rather than GitHub. The waveform collection itself is not included; it can be regenerated from the supplied Python software, configurations, manifests and seed definitions.
+The release includes the three SQLite feature databases required for direct numerical reanalysis. The waveform collection itself is not included; it can be regenerated from the supplied Python software, configurations, manifests and seed definitions.
 
 ## Scope
 

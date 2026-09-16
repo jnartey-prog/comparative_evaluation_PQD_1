@@ -31,7 +31,6 @@ Database records contain condition or realisation identifiers, disturbance strat
 - `holdout_stratum_method_summary.json`: confirmation results obtained with frozen development relationships.
 - `holdout_analysis_audit.json`: integrity checks for the confirmation analysis.
 - `confirmation_extraction_audit.json`: record completeness and extraction-failure audit.
-- `confirmation_generation_audit.json`: synthetic confirmation generation audit.
 - `confirmation_generation_audit.json`: confirmation-generation completeness and integrity checks.
 
 ## Qualification outputs

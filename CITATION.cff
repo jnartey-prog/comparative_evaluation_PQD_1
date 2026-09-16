@@ -14,7 +14,7 @@ authors:
 version: 1.0.0
 date-released: 2026-09-16
 license: MIT
-abstract: "Software, experimental manifests, processed development and confirmation data, qualification outputs and publication artifacts for property-specific evaluation of time-frequency descriptors for power-quality disturbances."
+abstract: "Software, experimental manifests, processed development and confirmation data, and qualification outputs for property-specific evaluation of time-frequency descriptors for power-quality disturbances."
 keywords:
   - power quality
   - time-frequency analysis

@@ -13,4 +13,3 @@ docs/_build/
 *.log
 *.tmp
 *.bak
-*.sqlite
