@@ -1,7 +1,9 @@
 """Verify CWT scale-to-frequency localisation with a known 50-Hz tone."""
-from pathlib import Path
 import json
+from pathlib import Path
+
 import numpy as np
+
 from tfpq_qualifier.models import SignalRecord
 from tfpq_qualifier.transforms import transform
 

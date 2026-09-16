@@ -24,7 +24,12 @@ Python 3.11-3.13 is supported. The locked environment is defined by `pyproject.t
 ```bash
 uv sync --all-extras
 uv run pytest
+uv run python scripts/verify_release.py
 ```
+
+The release verifier performs a read-only integrity and consistency check using the supplied
+SQLite databases and reference outputs. It does not regenerate the waveform collection or
+repeat the computationally intensive transform extraction.
 
 See `docs/REPRODUCIBILITY.md` for the analysis sequence and expected inputs and outputs.
 

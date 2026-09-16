@@ -11,7 +11,6 @@ import numpy as np
 from tfpq_qualifier.models import SignalRecord
 from tfpq_qualifier.transforms import transform
 
-
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "verification"
 

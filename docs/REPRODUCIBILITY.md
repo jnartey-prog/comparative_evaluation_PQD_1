@@ -1,5 +1,29 @@
 # Reproducibility instructions
 
+## Retrieve the published databases
+
+The three feature databases are managed with Git LFS. After cloning the repository, ensure
+that Git LFS is installed and materialise the database files:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+## Rapid release verification
+
+Run the read-only release verifier before undertaking a complete reproduction:
+
+```bash
+uv sync --all-extras
+uv run python scripts/verify_release.py
+```
+
+This command verifies the release checksums, SQLite integrity and record allocations, the
+32-combination qualification matrix and the reported STFT flicker development and confirmation
+metrics. It uses the supplied feature databases and does not regenerate waveforms or repeat
+transform extraction.
+
 ## Installation and tests
 
 ```bash
