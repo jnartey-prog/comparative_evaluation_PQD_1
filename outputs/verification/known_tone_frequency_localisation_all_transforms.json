@@ -1,0 +1,68 @@
+{
+  "test_signal": {
+    "waveform": "sin(2*pi*50*t)",
+    "sampling_rate_hz": 12800.0,
+    "duration_s": 1.0
+  },
+  "all_pass": true,
+  "results": [
+    {
+      "representation": "STFT",
+      "input_frequency_hz": 50.0,
+      "recovered_frequency_hz": 50.0,
+      "absolute_error_hz": 0.0,
+      "acceptance_tolerance_hz": 5.0,
+      "status": "PASS",
+      "recovery_rule": "frequency row with maximum time-averaged squared magnitude",
+      "configuration": {
+        "window_name": "hann",
+        "window": 256,
+        "hop": 64
+      }
+    },
+    {
+      "representation": "CWT",
+      "input_frequency_hz": 50.0,
+      "recovered_frequency_hz": 50.37048165398834,
+      "absolute_error_hz": 0.37048165398834243,
+      "acceptance_tolerance_hz": 5.0,
+      "status": "PASS",
+      "recovery_rule": "frequency row containing the maximum-magnitude coefficient",
+      "configuration": {
+        "wavelet": "cmor1.5-1.0",
+        "frequency_bins": 128,
+        "frequency_min": 10.0,
+        "frequency_max": 3000.0
+      }
+    },
+    {
+      "representation": "S-transform",
+      "input_frequency_hz": 50.0,
+      "recovered_frequency_hz": 48.0,
+      "absolute_error_hz": 2.0,
+      "acceptance_tolerance_hz": 5.0,
+      "status": "PASS",
+      "recovery_rule": "frequency row with maximum time-averaged squared magnitude",
+      "configuration": {
+        "frequency_bins": 128
+      }
+    },
+    {
+      "representation": "VMD",
+      "input_frequency_hz": 50.0,
+      "recovered_frequency_hz": 49.93430897792335,
+      "absolute_error_hz": 0.06569102207664912,
+      "acceptance_tolerance_hz": 5.0,
+      "status": "PASS",
+      "recovery_rule": "final centre frequency of the maximum-energy mode",
+      "configuration": {
+        "modes": 5,
+        "alpha": 2000,
+        "tau": 0,
+        "dc": 0,
+        "init": 1,
+        "tolerance": 1e-07
+      }
+    }
+  ]
+}

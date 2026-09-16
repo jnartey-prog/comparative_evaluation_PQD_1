@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "formal_rows_read": 80800,
+  "confirmation_rows_read": 0,
+  "expected_groups": 32,
+  "actual_groups": 32,
+  "policy_sha256": "ae058c695bdda1e6df46ed8eb3b652542e86221e55797512343cb5a526f37bc7",
+  "qualification_threshold_policy_sha256": "8b8cf71b393d7264f9ae5bd04f00d253abe709d5654f404e8fdf40cab0f52bd0",
+  "undefined_primary_frequency_records": 736,
+  "outputs_sha256": {
+    "record_level_metrics.csv": "750d16664f86615add67a46a89b17775b5515100de746c718aa2cc915cc28505",
+    "stratum_method_summary.csv": "92f973af19b76f21c286a4b881f55de97cf6aebf148f7b7d95e8bca42153f4cc",
+    "formal_development_summary.json": "b54c2050f5dfc0619987c878d0167a8fdd97c330c6a96fc01be2fe06d9789f5f"
+  },
+  "errors": [],
+  "warnings": [
+    "Final qualification labels remain blocked pending confirmation."
+  ]
+}

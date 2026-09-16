@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "formal_records_read": 80800,
+  "confirmation_records_read": 0,
+  "groups": 32,
+  "bootstrap_resamples": 2000,
+  "outputs_sha256": {
+    "criterion_level_diagnostics.csv": "ca28f009e66a2cea642c7239305d1d17c5c282480e2b51da9e7fdc463a4eaf4b",
+    "calibration_cluster_bootstrap.csv": "15df3557dc9f31d717020b163d777420a4710e72e0c762299f73a71172d5b691",
+    "physical_response_diagnostics.csv": "a128d3a574814f13820648c0e45221d3de272eba183c144c075e11dbf8d3cce0",
+    "snr_tolerance_sensitivity.csv": "0044e2263c36f64fbdc05dda9b938d884424755f8a54c4e2baad9380456ecf18",
+    "completed_development_gates.csv": "f701fe5db23eaff4fc65988d4aa8c66776615c102855b49855c3f1bc2cd6439e",
+    "development_gate_completion.json": "4c4d0e0aa58e51ec689583bb91d3517812240420cb68efb45e229d8d13ca74df"
+  },
+  "warnings": [
+    "No validity domain or final qualification label was frozen by this diagnostic."
+  ]
+}

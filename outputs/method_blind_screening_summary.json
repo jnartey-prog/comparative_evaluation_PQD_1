@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "policy_method_blind": true,
+  "nuisance_conditions_screened": 576,
+  "retained_conditions": 202,
+  "formal_realizations_planned": 20200,
+  "fixed_audit_sample_available": 120,
+  "fixed_audit_sample_retained": 120,
+  "boundary_conditions_retained": 44,
+  "boundary_conditions_available": 44,
+  "mandatory_conditions_available": 202,
+  "mandatory_conditions_excluded_by_cap": 0,
+  "mandatory_reason_counts": {
+    "boundary": 44,
+    "fixed_stratified_audit_sample": 120,
+    "pooled_iqr_gt_0.25": 61,
+    "pooled_median_error_gt_0.50": 6
+  },
+  "screening_decisions_sha256": "7f89c3f385a122584049c7a7bc9da2d37a2a0fc2967d4b7c7ca86e147b4c2376",
+  "manifest_sha256": "6481659df494892c7c8375fa8aff617d98a5a16c45f2bc0f49665b18f0807b97",
+  "calibration_models": {
+    "sag::stft": [
+      -0.9961786233312954,
+      1.0779177839367993
+    ],
+    "sag::wavelet": [
+      -1.5465806189707347,
+      1.415327178336011
+    ],
+    "sag::s_transform": [
+      -0.768872381179467,
+      0.9357222995465709
+    ],
+    "sag::vmd": [
+      -0.019294235089587768,
+      0.5129378914571964
+    ],
+    "swell::stft": [
+      0.8555760715960397,
+      0.9683728671803484
+    ],
+    "swell::wavelet": [
+      1.8893788064496575,
+      0.36831779281793414
+    ],
+    "swell::s_transform": [
+      0.505126813103376,
+      1.172523706203398
+    ],
+    "swell::vmd": [
+      0.0011826179817660525,
+      1.4367530611433001
+    ],
+    "interruption::stft": [
+      -0.9587383006079391,
+      0.9601196463800524
+    ],
+    "interruption::wavelet": [
+      -0.06347462679951671,
+      0.1088894239440175
+    ],
+    "interruption::s_transform": [
+      -0.07368821526638655,
+      0.11939057826622827
+    ],
+    "interruption::vmd": [
+      -210.2010396529417,
+      210.24938652203514
+    ],
+    "harmonics::stft": [
+      2.174730059807432,
+      0.027274853166253474
+    ],
+    "harmonics::wavelet": [
+      17.468834902233844,
+      0.009651320729492112
+    ],
+    "harmonics::s_transform": [
+      0.3285104065788807,
+      0.03759343729600584
+    ],
+    "harmonics::vmd": [
+      3.4514254599003147,
+      0.01924017526319974
+    ],
+    "flicker::stft": [
+      0.9904662763589522,
+      -0.09614657771627824
+    ],
+    "flicker::wavelet": [
+      -0.8786434950632364,
+      15.923777502587075
+    ],
+    "flicker::s_transform": [
+      0.9962171779615895,
+      0.13572316234558973
+    ],
+    "flicker::vmd": [
+      0.11666189475179851,
+      12.126492331331749
+    ],
+    "notching::stft": [
+      20.495129301390637,
+      -0.6101117740374488
+    ],
+    "notching::wavelet": [
+      185.02361110371325,
+      0.19897178080895966
+    ],
+    "notching::s_transform": [
+      4.020207113674634,
+      0.14847663491572222
+    ],
+    "notching::vmd": [
+      60.557367141075254,
+      0.21015196151869595
+    ],
+    "oscillatory_transient::stft": [
+      0.0,
+      1649.5884773662551
+    ],
+    "oscillatory_transient::wavelet": [
+      -0.4119824219397908,
+      1714.4607542908502
+    ],
+    "oscillatory_transient::s_transform": [
+      0.3623881568071209,
+      1319.3901437425493
+    ],
+    "oscillatory_transient::vmd": [
+      0.7218115191646973,
+      586.0793716029827
+    ],
+    "impulsive_transient::stft": [
+      77.52369106035015,
+      -2.693210493354136
+    ],
+    "impulsive_transient::wavelet": [
+      649.1947463432363,
+      0.21645201268154693
+    ],
+    "impulsive_transient::s_transform": [
+      20.21932970828878,
+      0.23733988901333383
+    ],
+    "impulsive_transient::vmd": [
+      238.9458494905572,
+      0.3546450441554396
+    ]
+  }
+}

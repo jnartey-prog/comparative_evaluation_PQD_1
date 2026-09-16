@@ -1,0 +1,117 @@
+{
+  "policy_id": "QUALIFICATION-THRESHOLDS-001",
+  "title": "Property-specific qualification tolerances and mandatory gates",
+  "version": "1.0.0",
+  "status": "frozen_publication_release",
+  "approved_at_utc": "2026-08-15T05:34:22.9683596Z",
+  "timing": "Threshold candidates were documented before formal generation; explicit approval and freeze occurred after formal extraction and descriptive policy-enforcement analysis, but before qualification labeling, validity-domain construction, mixed-model qualification inference, or confirmation-outcome access.",
+  "evidence_classification": "Literature-informed and resolution-aware study-specific engineering tolerances; not universal IEEE or IEC acceptance limits.",
+  "primary_property_tolerances": {
+    "sag.residual_voltage_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "swell.event_voltage_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "interruption.residual_voltage_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "harmonics.a3_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "notching.depth_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "impulsive_transient.absolute_amplitude_pu": {
+      "rule": "max(0.01 p.u., 5% of absolute truth)",
+      "absolute_floor": 0.01,
+      "relative_fraction": 0.05
+    },
+    "oscillatory_transient.frequency_hz": {
+      "rule": "max(25 Hz, 2% of absolute truth)",
+      "absolute_floor_hz": 25.0,
+      "relative_fraction": 0.02,
+      "resolution_source": "nominal transform-frequency resolution"
+    },
+    "flicker.modulation_frequency_hz": {
+      "rule": "max(one record-length modulation-frequency bin, 2% of absolute truth)",
+      "record_bin_hz": "sample_rate_hz / sample_count",
+      "relative_fraction": 0.02,
+      "low_frequency_sample_rate_hz": 12800.0,
+      "rationale": "The modulation peak is obtained from the record-length envelope FFT, not the 0-3 kHz transform frequency grid."
+    }
+  },
+  "mandatory_development_gates": {
+    "standardized_absolute_bias": {
+      "definition": "abs(mean((estimate-truth)/epsilon_record))",
+      "maximum": 0.25
+    },
+    "standardized_rmse": {
+      "definition": "sqrt(mean(((estimate-truth)/epsilon_record)^2)) over all finite estimates",
+      "maximum": 1.0,
+      "nonestimable_rule": "A nonestimable primary result fails the record-level tolerance indicator and may not be assigned a finite error."
+    },
+    "all_record_tolerance_pass_proportion": {
+      "definition": "proportion of all expected records with a finite estimate and absolute error <= epsilon_record",
+      "minimum": 0.95
+    },
+    "calibration": {
+      "slope_ci_contains": 1.0,
+      "intercept_ci_contains": 0.0,
+      "alternative": "A frozen development calibration may satisfy this gate only if equivalent performance is retained unchanged in confirmation."
+    },
+    "physical_response": {
+      "requirements": [
+        "target response is monotonic and physically plausible",
+        "target effect exceeds the largest nuisance effect"
+      ]
+    },
+    "extraction_failure_rate": {
+      "maximum": 0.01
+    }
+  },
+  "sensitivity_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "structural_undefined_policy_id": "ANALYSIS-CLARIFICATION-001",
+  "structural_undefined_policy_sha256": "ac7d5114025997f30f14b39783da5add47325c25c6198e1a8d022ee6ef9e431a",
+  "decision_semantics": {
+    "development_gate_pass": "All mandatory development gates pass over the declared development domain.",
+    "development_gate_fail": "At least one mandatory development gate fails.",
+    "conditionally_qualified": "Permitted only for a physically interpretable development-derived validity domain frozen before confirmation and tested unchanged in confirmation.",
+    "final_qualified": "Prohibited until unchanged confirmation retains the development decision and its uncertainty requirement.",
+    "not_qualified": "Assigned after criterion-level evidence establishes failure over the claimed domain; no method may be rescued by post-hoc retuning."
+  },
+  "multiplicity": {
+    "primary": "Holm family-wise error rate 0.05 within each physical-property family",
+    "exploratory": "Benjamini-Hochberg false discovery rate 0.05 with explicit exploratory label"
+  },
+  "prohibited": [
+    "selecting or changing thresholds to optimize observed method rankings or pass rates",
+    "imputing structurally undefined primary estimates",
+    "silently excluding structurally undefined primary estimates",
+    "changing the 125 Hz high-band boundary for primary analysis",
+    "retuning transforms after formal outcomes",
+    "accessing confirmation outcomes before all remaining calibration and validity-domain artifacts are frozen and externally registered"
+  ],
+  "required_reporting": {
+    "tolerance_sensitivity": "Report results at 0.5x, 1x, and 2x epsilon without changing the primary 1x decision.",
+    "timing_disclosure": "Disclose the exact post-extraction, pre-qualification approval timing.",
+    "standards_boundary": "Do not represent these study-specific tolerances as IEEE or IEC compliance limits."
+  },
+  "confirmation_firewall": "No confirmation outcomes generated or inspected at threshold freeze; confirmation analysis remains blocked pending external registration and all remaining freeze artifacts.",
+  "policy_sha256": "d9527d5c37c0ab27fb8d2f174089f2b777ad7e18ecc3ba82a55cb06ec1cb94ec",
+  "hash_definition": "SHA-256 of canonical JSON with policy_sha256 set to null"
+}

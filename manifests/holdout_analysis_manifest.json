@@ -1,0 +1,22 @@
+{
+  "manifest_id": "HOLDOUT-ANALYSIS-CONFIRMATION-V1",
+  "status": "FROZEN_READY",
+  "role": "independent synthetic hold-out analysis",
+  "source_partition": "confirmation",
+  "source_manifest": "manifests/sealed_confirmation_conditions.csv",
+  "source_manifest_sha256": "22e81c560c0b4f3c8157d753e302cfec94338ea8e9f0130110c4d64d4d81fb73",
+  "source_feature_database": "outputs/confirmation_features.sqlite",
+  "source_feature_database_sha256": "a0e2d14e6236202482166b66eac4ab732a7b65c5c2b7c24336223fbabf1ecf28",
+  "source_extraction_audit": "outputs/confirmation_extraction_audit.json",
+  "expected_conditions": 876,
+  "expected_realizations": 79600,
+  "expected_rows_all_methods": 318400,
+  "methods": ["stft", "wavelet", "s_transform", "vmd"],
+  "independence_basis": [
+    "confirmation conditions were sealed before confirmation outcomes were generated",
+    "confirmation seeds and parameter combinations are disjoint from development",
+    "development-derived feature rules and qualification thresholds remain unchanged"
+  ],
+  "analysis_rules": "Use the frozen qualification policy and undefined-frequency policy without retuning; do not use hold-out outcomes to alter thresholds, feature definitions, or validity domains.",
+  "note": "This manifest designates the already-generated sealed confirmation partition as the independent synthetic hold-out. It does not create or overwrite data."
+}

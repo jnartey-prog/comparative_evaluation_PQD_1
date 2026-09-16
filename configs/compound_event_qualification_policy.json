@@ -1,0 +1,12 @@
+{
+  "policy_id": "COMPOUND-EVENT-SECONDARY-001",
+  "version": "1.0.0",
+  "status": "frozen_secondary_descriptive",
+  "scope": "all compound_screen strata",
+  "compound_strata": ["sag+harmonics", "swell+harmonics", "sag+oscillatory_transient", "flicker+harmonics", "interruption+transient"],
+  "primary_qualification": "prohibited",
+  "rule": "Do not assign a single compound qualified/not-qualified label. Evaluate constituent components only when an explicitly identifiable feature-to-truth mapping exists.",
+  "component_mapping": "Component-level scoring is permitted only after a stratum-specific, validated feature-to-truth mapping is frozen. No such mapping is promoted by this release.",
+  "reporting": "Report compound rows as a secondary descriptive stratum; they cannot change primary-stratum qualification decisions.",
+  "rationale": "The current feature schema and qualification model do not provide validated component-specific estimators for all compound strata."
+}

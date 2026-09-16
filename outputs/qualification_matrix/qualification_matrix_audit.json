@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "primary_groups": 32,
+  "qualified": 1,
+  "not_qualified": 31,
+  "compound_groups": 5,
+  "compound_status": "DESCRIPTIVE_ONLY",
+  "source_development": "outputs/formal_analysis/development_gate_completion.json",
+  "source_holdout": "outputs/holdout_analysis/holdout_stratum_method_summary.json",
+  "errors": []
+}

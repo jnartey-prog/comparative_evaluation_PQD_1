@@ -1,0 +1,14 @@
+{
+  "status": "DESCRIPTIVE_ONLY",
+  "policy_id": "COMPOUND-EVENT-SECONDARY-001",
+  "compound_strata": [
+    "sag+harmonics",
+    "swell+harmonics",
+    "sag+oscillatory_transient",
+    "flicker+harmonics",
+    "interruption+transient"
+  ],
+  "rows": 8000,
+  "primary_qualification_label": null,
+  "reason": "The current feature schema and qualification model do not provide validated component-specific estimators for all compound strata."
+}

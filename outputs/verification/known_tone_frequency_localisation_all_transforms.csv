@@ -1,0 +1,5 @@
+representation,input_frequency_hz,recovered_frequency_hz,absolute_error_hz,acceptance_tolerance_hz,status,recovery_rule
+STFT,50.0,50.0,0.0,5.0,PASS,frequency row with maximum time-averaged squared magnitude
+CWT,50.0,50.37048165398834,0.37048165398834243,5.0,PASS,frequency row containing the maximum-magnitude coefficient
+S-transform,50.0,48.0,2.0,5.0,PASS,frequency row with maximum time-averaged squared magnitude
+VMD,50.0,49.93430897792335,0.06569102207664912,5.0,PASS,final centre frequency of the maximum-energy mode

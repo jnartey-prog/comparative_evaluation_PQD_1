@@ -1,0 +1,9 @@
+{
+  "release_id": "tfpq-publication-release-v1.0.0",
+  "release_date": "2026-09-16",
+  "development_manifest_sha256": "fde04d5170e5f3973147efc0e624c6f8818222e3da949671751daf8b59aa7a9c",
+  "formal_repeatability_manifest_sha256": "6481659df494892c7c8375fa8aff617d98a5a16c45f2bc0f49665b18f0807b97",
+  "sealed_confirmation_manifest_sha256": "22e81c560c0b4f3c8157d753e302cfec94338ea8e9f0130110c4d64d4d81fb73",
+  "scientific_design_canonical_sha256": "b46bc83448f31a9898fda3f1477c129626c457b0bb79b9bbd0088dcf03aacc82",
+  "note": "Integrity lock for the scientific design and experimental condition manifests supplied in the publication release."
+}

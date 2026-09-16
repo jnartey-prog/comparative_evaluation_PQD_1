@@ -1,0 +1,64 @@
+{
+  "policy_id": "ANALYSIS-CLARIFICATION-001",
+  "title": "Structurally undefined high-band peak-frequency policy",
+  "version": "1.0.0",
+  "status": "frozen_publication_release",
+  "approved_at_utc": "2026-08-15T05:09:25.4333033Z",
+  "timing": "After formal feature extraction and its method-agnostic completeness audit, but before comparative inferential analysis, calibration, transform ranking, qualification decisions, validity-domain construction, or confirmation-outcome access.",
+  "scope": {
+    "feature": "high_band_peak_frequency_hz",
+    "high_band_lower_bound_hz": 125.0,
+    "structural_undefined_rule": "The peak frequency is structurally undefined exactly when high_band_energy_fraction is 0.0 and no transform component exists above 125 Hz.",
+    "not_a_transform_failure": true,
+    "not_missing_at_random": true
+  },
+  "primary_analysis": {
+    "estimand": "All-record physical-property qualification over the complete frozen formal-repeatability denominator.",
+    "undefined_frequency_treatment": "A structurally undefined primary frequency estimate is a record-level qualification failure for frequency estimation.",
+    "denominator_rule": "Retain every expected record in the primary qualification denominator.",
+    "imputation": "prohibited",
+    "zero_substitution": "prohibited",
+    "silent_complete_case_analysis": "prohibited"
+  },
+  "availability_analysis": {
+    "indicator": "estimable_high_band_peak = isfinite(high_band_peak_frequency_hz)",
+    "reporting": "Report counts, proportions, and cluster-aware uncertainty by transform, disturbance stratum, SNR, property level, and phase.",
+    "model": "logit(P(estimable_high_band_peak))~transform*SNR+property_level+phase+(1|condition)",
+    "role": "Required supportive analysis; it does not replace the all-record primary qualification result."
+  },
+  "conditional_accuracy_analysis": {
+    "population": "Records with a finite high-band peak-frequency estimate.",
+    "outcomes": [
+      "normalized absolute physical-property error",
+      "calibration intercept and slope",
+      "repeatability",
+      "robustness degradation",
+      "cluster-bootstrap uncertainty"
+    ],
+    "label": "Accuracy conditional on the transform producing a high-band component.",
+    "role": "Secondary and explicitly conditional; it cannot be presented as unconditional transform performance."
+  },
+  "qualification_and_validity_domain": {
+    "primary_property_directly_affected": "oscillatory-transient frequency estimated by high_band_peak_frequency_hz",
+    "other_primary_mappings": "Impulsive-transient amplitude and notching depth use high_band_energy_fraction; their primary estimates remain defined when the fraction is zero.",
+    "conditional_qualification": "Permitted only when a physically interpretable validity domain is derived from development-design variables, frozen before confirmation access, and tested unchanged on confirmation data.",
+    "outcome_driven_availability_threshold": "prohibited",
+    "post_audit_retuning_of_125_hz_or_transform_settings": "prohibited"
+  },
+  "sensitivity_analysis": {
+    "alternative_high_band_boundaries_or_vmd_settings": "exploratory_only",
+    "primary_rule_may_not_change": true,
+    "reporting_label": "Post-freeze exploratory sensitivity analysis"
+  },
+  "audit_trigger": {
+    "formal_extraction_audit": "outputs/formal_extraction_audit.json",
+    "audit_status": "PASS",
+    "vmd_structurally_undefined_total": 3506,
+    "vmd_oscillatory_transient_undefined": 736,
+    "vmd_oscillatory_transient_total": 2700,
+    "confirmation_rows_at_freeze": 0
+  },
+  "firewall": "Confirmation outcomes remain sealed and may not be accessed until this policy, calibration models, qualification rules, thresholds, and validity domains are frozen and externally registered as required.",
+  "policy_sha256": "ac7d5114025997f30f14b39783da5add47325c25c6198e1a8d022ee6ef9e431a",
+  "hash_definition": "SHA-256 of canonical JSON with policy_sha256 set to null"
+}

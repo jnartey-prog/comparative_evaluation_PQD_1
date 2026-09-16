@@ -1,0 +1,351 @@
+{
+  "status": "frozen_publication_release",
+  "design_version": "0.3.0",
+  "frozen": true,
+  "signal_context": {
+    "nominal_voltage_pu": 1.0,
+    "fundamental_frequency_hz": 50.0,
+    "record_duration_policy": "event_adaptive",
+    "minimum_record_duration_s": 0.2,
+    "pre_event_cycles": 5,
+    "post_event_cycles": 5,
+    "nominal_sampling_rate_low_frequency_hz": 12800,
+    "nominal_sampling_rate_transient_hz": 51200
+  },
+  "sampling_sensitivity_hz": [
+    9600,
+    12800,
+    25600,
+    30000,
+    51200
+  ],
+  "snr_development_db": [
+    20,
+    30,
+    40,
+    50,
+    "noise_free"
+  ],
+  "snr_confirmation_db": [
+    25,
+    35
+  ],
+  "phase_development_deg": [
+    0,
+    45,
+    90,
+    135
+  ],
+  "phase_confirmation_deg": [
+    22.5,
+    67.5,
+    112.5,
+    157.5
+  ],
+  "noise_model": "additive_white_gaussian",
+  "design_verification_recommended_repetitions_per_noisy_condition": 100,
+  "replication_policy": {
+    "noise_free_property_response": 1,
+    "broad_nuisance_screen": 10,
+    "retained_primary_noisy_conditions": 100,
+    "compound_screen": 20
+  },
+  "recommended_balanced_design": {
+    "property_response_records": 480,
+    "broad_nuisance_records": 5760,
+    "formal_repeatability_records_max": 20200,
+    "compound_records": 4000,
+    "pre_confirmation_records": 30440,
+    "confirmation_fraction": 0.3,
+    "estimated_total_records": 37832,
+    "serial_equivalent_vmd_hour_ceiling": 150
+  },
+  "final_repetitions_rule": "increase until relative Monte Carlo error of primary MAE and SD is below 10 percent and interval-width targets are met, subject to approved compute ceiling",
+  "final_bootstrap_resamples": 2000,
+  "allocation": {
+    "method": "parameter_combination_blocked_precision_sized",
+    "legacy_planning_fraction": 0.3,
+    "minimum_independent_confirmation_conditions_per_primary_property_stratum": 97,
+    "confidence_level": 0.95,
+    "target_pass_proportion_half_width": 0.1
+  },
+  "oracle_window_policy": "verification_ceiling_only_not_primary_claim",
+  "multiplicity": {
+    "primary": "Holm FWER 0.05 within each physical-property family",
+    "secondary": "BH FDR 0.05 exploratory"
+  },
+  "transforms": {
+    "stft": {
+      "nominal_window": "hann",
+      "nominal_window_cycles": 1.0,
+      "overlap_fraction": 0.75,
+      "window_cycles_grid": [
+        0.25,
+        0.5,
+        1,
+        2,
+        4
+      ]
+    },
+    "wavelet": {
+      "nominal": "cwt_cmor",
+      "family_sensitivity": [
+        "cmor",
+        "morl",
+        "db4",
+        "sym4",
+        "coif2"
+      ]
+    },
+    "s_transform": {
+      "nominal": "selected_frequency_discrete_stockwell",
+      "frequency_bins": 128,
+      "sensitivity": [
+        "selected_frequency_standard_gaussian",
+        "preregistered_modified_window"
+      ]
+    },
+    "vmd": {
+      "K": 5,
+      "alpha": 2000,
+      "tau": 0,
+      "dc": false,
+      "tolerance": 1e-07,
+      "K_grid": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "alpha_grid": [
+        100,
+        300,
+        1000,
+        3000,
+        10000
+      ]
+    }
+  },
+  "compound_events": [
+    "sag+harmonics",
+    "swell+harmonics",
+    "sag+oscillatory_transient",
+    "flicker+harmonics",
+    "interruption+transient"
+  ],
+  "configuration_sha256": "b46bc83448f31a9898fda3f1477c129626c457b0bb79b9bbd0088dcf03aacc82",
+  "approved_at_utc": "2026-08-13T14:20:41+00:00",
+  "amended_at_utc": "2026-08-14T05:17:39+00:00",
+  "parameter_domains": {
+    "sag": {
+      "residual_voltage_pu": [
+        0.1,
+        0.9
+      ],
+      "duration_cycles": [
+        0.5,
+        30.0
+      ]
+    },
+    "swell": {
+      "event_voltage_pu": [
+        1.1,
+        1.8
+      ],
+      "duration_cycles": [
+        0.5,
+        30.0
+      ]
+    },
+    "interruption": {
+      "residual_voltage_pu": [
+        0.0,
+        0.1
+      ],
+      "duration_cycles": [
+        0.5,
+        30.0
+      ]
+    },
+    "harmonics": {
+      "a3_pu": [
+        0.01,
+        0.1
+      ],
+      "a5_pu": [
+        0.01,
+        0.1
+      ],
+      "a7_pu": [
+        0.01,
+        0.1
+      ],
+      "phi3_deg": [
+        0.0,
+        360.0
+      ],
+      "phi5_deg": [
+        0.0,
+        360.0
+      ],
+      "phi7_deg": [
+        0.0,
+        360.0
+      ]
+    },
+    "flicker": {
+      "modulation_depth": [
+        0.01,
+        0.1
+      ],
+      "modulation_frequency_hz": [
+        0.5,
+        25.0
+      ]
+    },
+    "notching": {
+      "depth_pu": [
+        0.1,
+        0.5
+      ],
+      "width_ms": [
+        0.1,
+        1.0
+      ]
+    },
+    "oscillatory_transient": {
+      "amplitude_pu": [
+        0.1,
+        0.8
+      ],
+      "frequency_hz": [
+        300.0,
+        3000.0
+      ],
+      "time_constant_ms": [
+        0.5,
+        10.0
+      ],
+      "support_ms": [
+        1.0,
+        20.0
+      ]
+    },
+    "impulsive_transient": {
+      "absolute_amplitude_pu": [
+        0.1,
+        1.0
+      ],
+      "width_ms": [
+        0.1,
+        2.0
+      ],
+      "polarity": [
+        -1.0,
+        1.0
+      ]
+    }
+  },
+  "hardening_rules": {
+    "version": "1.0.0-draft",
+    "status": "computationally_verified_pending_human_freeze",
+    "screening": {
+      "unit": "disturbance-property-nuisance condition",
+      "method_blind": true,
+      "retain_if_any": [
+        "generator numerical failure or non-finite output",
+        "at least one transform numerical failure",
+        "condition is a prespecified boundary point",
+        "pooled-across-method median normalized absolute error exceeds 0.50",
+        "pooled-across-method interquartile range exceeds 0.25",
+        "condition belongs to the fixed 20 percent stratified audit sample"
+      ],
+      "prohibited": [
+        "retention based on which transform ranks best",
+        "retention based on statistical significance",
+        "post-hoc removal of difficult conditions"
+      ],
+      "audit_sample_fraction": 0.2,
+      "maximum_retained_conditions": 202
+    },
+    "fairness": {
+      "common_inputs": [
+        "waveform",
+        "noise realization",
+        "preprocessing",
+        "truth target",
+        "evaluation mask policy"
+      ],
+      "common_frequency_support_hz": [
+        0,
+        3000
+      ],
+      "tuning_budget_per_method": 45,
+      "selection_objective": "development-only median normalized physical-property error, tie-broken by concentration then runtime",
+      "freeze_before_confirmation": true,
+      "oracle_windows_primary_claims": false
+    },
+    "confirmation_sizing": {
+      "method": "two-sided normal-approximation precision bound with finite-population ceiling",
+      "confidence_level": 0.95,
+      "target_half_width_for_pass_proportion": 0.1,
+      "conservative_pass_probability": 0.5,
+      "minimum_independent_conditions_per_primary_stratum": 97,
+      "new_noise_realizations_per_condition": 100,
+      "note": "97 is ceil(1.96^2*0.25/0.10^2); increase for clustering or attrition"
+    },
+    "multiplicity": {
+      "families": "one family per physical property across four transforms",
+      "primary_control": "Holm family-wise error rate at 0.05",
+      "secondary_control": "Benjamini-Hochberg false discovery rate at 0.05, labelled exploratory"
+    },
+    "statistical_models": {
+      "continuous_error": "y~transform*snr+property_level+phase+(1|condition)+(1|noise_seed)",
+      "qualification_pass": "logit(P(pass))~transform*snr+property_level+phase+(1|condition)",
+      "runtime": "log(runtime)~transform+sampling_rate+record_length+(1|condition)",
+      "rank_stability": "bootstrap Spearman rho, Kendall tau and top-k overlap by nuisance stratum"
+    },
+    "compound_equations": {
+      "sag+harmonics": "x(t)=A_sag(t)sin(2*pi*f0*t+phi)+sum_h a_h sin(2*pi*h*f0*t+phi_h)",
+      "swell+harmonics": "x(t)=A_swell(t)sin(2*pi*f0*t+phi)+sum_h a_h sin(2*pi*h*f0*t+phi_h)",
+      "sag+oscillatory_transient": "x(t)=A_sag(t)sin(2*pi*f0*t+phi)+I_event*a*exp(-beta*tau)sin(2*pi*f_tr*tau)",
+      "flicker+harmonics": "x(t)=[1+m*sin(2*pi*f_m*t)]sin(2*pi*f0*t+phi)+sum_h a_h sin(2*pi*h*f0*t+phi_h)",
+      "interruption+transient": "x(t)=A_int(t)sin(2*pi*f0*t+phi)+I_event*g_transient(t)"
+    }
+  },
+  "record_policies": {
+    "positioning_slack_cycles": 10,
+    "flicker_minimum_modulation_cycles": 3
+  },
+  "staged_generation": {
+    "property_response": {
+      "conditions_per_single_stratum": 60,
+      "repetitions": 1,
+      "records": 480
+    },
+    "broad_nuisance_screen": {
+      "conditions_per_single_stratum": 72,
+      "repetitions": 10,
+      "records": 5760
+    },
+    "compound_screen": {
+      "conditions_per_compound_stratum": 40,
+      "repetitions": 20,
+      "records": 4000
+    },
+    "formal_repeatability": {
+      "generated_after_method_blind_screen": true,
+      "maximum_conditions": 202,
+      "repetitions": 100,
+      "maximum_records": 20200
+    }
+  },
+  "generator_equation_version": "tfpq-analytical-v1.1.0",
+  "generator_sha256": "fecdf6fceb42e5879222fd809dbe51ee75c86ec617880fed3042a7b9490bd3f3",
+  "hash_definition": "SHA-256 of canonical JSON with configuration_sha256 set to null"
+}

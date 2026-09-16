@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite the archived repository release and the associated article."
+title: "TFPQ descriptor qualification software and supporting data"
+type: software
+authors:
+  - family-names: "Kwedjartey"
+    given-names: "Joshua Nartey"
+  - family-names: "Attachie"
+    given-names: "Joseph Cudjoe"
+  - family-names: "Agyare"
+    given-names: "Robert Ofosu"
+  - family-names: "Yeboah"
+    given-names: "Samuel Jonas"
+version: 1.0.0
+date-released: 2026-09-16
+license: MIT
+abstract: "Software, experimental manifests, processed development and confirmation data, qualification outputs and publication artifacts for property-specific evaluation of time-frequency descriptors for power-quality disturbances."
+keywords:
+  - power quality
+  - time-frequency analysis
+  - descriptor qualification
+  - synthetic waveforms
+  - reproducible research

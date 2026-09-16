@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "22e81c560c0b4f3c8157d753e302cfec94338ea8e9f0130110c4d64d4d81fb73",
+  "database_sha256": "a0e2d14e6236202482166b66eac4ab732a7b65c5c2b7c24336223fbabf1ecf28",
+  "database_integrity": "ok",
+  "conditions_expected": 876,
+  "expected_rows": 318400,
+  "actual_rows": 318400,
+  "stage_rows": {
+    "sealed_confirmation": 310400,
+    "compound_screen": 8000
+  },
+  "method_rows": {
+    "vmd": 79600,
+    "s_transform": 79600,
+    "wavelet": 79600,
+    "stft": 79600
+  },
+  "method_failures": {
+    "vmd": 0,
+    "s_transform": 0,
+    "wavelet": 0,
+    "stft": 0
+  },
+  "method_runtime_seconds": {
+    "vmd": 2107501.1825124817,
+    "s_transform": 41083.150099399296,
+    "wavelet": 58469.572546398165,
+    "stft": 390.46241699646635
+  },
+  "method_runtime_hours": {
+    "vmd": 585.416995142356,
+    "s_transform": 11.411986138722026,
+    "wavelet": 16.241547929555047,
+    "stft": 0.10846178249901843
+  },
+  "nonfinite_nonpermitted_counts": {
+    "vmd": 0,
+    "s_transform": 0,
+    "wavelet": 0,
+    "stft": 0
+  },
+  "undefined_high_band_peak_counts": {
+    "vmd": 10398,
+    "s_transform": 0,
+    "wavelet": 0,
+    "stft": 0
+  },
+  "confirmation_rows": 318400,
+  "errors": [],
+  "warnings": [
+    "undefined high-band peak denotes no transform component above 125 Hz: {'vmd': 10398, 's_transform': 0, 'wavelet': 0, 'stft': 0}"
+  ]
+}

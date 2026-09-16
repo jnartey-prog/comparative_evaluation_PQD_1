@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "independent synthetic hold-out analysis",
+  "records_read": 310400,
+  "expected_records": 318400,
+  "groups": 32,
+  "expected_groups": 32,
+  "compound_rows_descriptive_only": 8000,
+  "compound_policy_id": "COMPOUND-EVENT-SECONDARY-001",
+  "stage_counts": {
+    "compound_screen": 8000,
+    "sealed_confirmation": 310400
+  },
+  "method_failures": {
+    "stft": 0,
+    "wavelet": 0,
+    "s_transform": 0,
+    "vmd": 0
+  },
+  "sqlite_integrity": "ok",
+  "source_manifest_sha256": "22e81c560c0b4f3c8157d753e302cfec94338ea8e9f0130110c4d64d4d81fb73",
+  "source_database_sha256": "a0e2d14e6236202482166b66eac4ab732a7b65c5c2b7c24336223fbabf1ecf28",
+  "summary_sha256": "524d3b2dcad2dda79571b2708143e64219b6ab33233b9ec129ffcfdae9a23709",
+  "undefined_primary_frequency_records": 2624,
+  "errors": []
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "22e81c560c0b4f3c8157d753e302cfec94338ea8e9f0130110c4d64d4d81fb73",
+  "design_sha256": "7bfd55c876a94c1c28efd2afe9eb381977bd871202c86122009912e5327c5757",
+  "generator_sha256": "50fe04ab0632da05040c3a5a3a183e8e97926c4a6ea29cf24d0c7acf8a60acaf",
+  "condition_bundles": 876,
+  "records": 79600,
+  "unique_realization_seeds": 79600,
+  "duplicate_realization_seeds": 0,
+  "stage_records": {
+    "sealed_confirmation": 77600,
+    "compound_screen": 2000
+  },
+  "stratum_records": {
+    "sag": 9700,
+    "swell": 9700,
+    "interruption": 9700,
+    "harmonics": 9700,
+    "flicker": 9700,
+    "notching": 9700,
+    "oscillatory_transient": 9700,
+    "impulsive_transient": 9700,
+    "sag+harmonics": 400,
+    "swell+harmonics": 400,
+    "sag+oscillatory_transient": 400,
+    "flicker+harmonics": 400,
+    "interruption+transient": 400
+  },
+  "realized_snr_max_absolute_error_db": 0.31559767152892704,
+  "stored_bytes": 18067437984,
+  "errors": []
+}

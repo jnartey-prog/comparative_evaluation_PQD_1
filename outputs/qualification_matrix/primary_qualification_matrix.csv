@@ -1,0 +1,33 @@
+stratum,method,development_all_gates_pass,holdout_bias_gate_pass,holdout_rmse_gate_pass,holdout_95_percent_gate_pass,holdout_extraction_gate_pass,final_status,decision_basis
+flicker,s_transform,False,True,False,True,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+flicker,stft,True,True,True,True,True,Qualified,all frozen development gates and unchanged hold-out numerical gates
+flicker,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+flicker,wavelet,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+harmonics,s_transform,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+harmonics,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+harmonics,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+harmonics,wavelet,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+impulsive_transient,s_transform,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+impulsive_transient,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+impulsive_transient,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+impulsive_transient,wavelet,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+interruption,s_transform,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+interruption,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+interruption,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+interruption,wavelet,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+notching,s_transform,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+notching,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+notching,vmd,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+notching,wavelet,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+oscillatory_transient,s_transform,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+oscillatory_transient,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+oscillatory_transient,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+oscillatory_transient,wavelet,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+sag,s_transform,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+sag,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+sag,vmd,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+sag,wavelet,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+swell,s_transform,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+swell,stft,False,False,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+swell,vmd,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
+swell,wavelet,False,True,False,False,True,Not qualified,all frozen development gates and unchanged hold-out numerical gates
