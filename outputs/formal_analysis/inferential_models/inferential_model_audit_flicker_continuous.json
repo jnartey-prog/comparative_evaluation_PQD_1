@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "formal_records_available": 80800,
+  "confirmation_records_read": 0,
+  "strata": [
+    "flicker"
+  ],
+  "model_count": 1,
+  "diagnostic_pass_count": 1,
+  "fallback_required_count": 0,
+  "outputs_sha256": {
+    "fixed_effects_flicker_continuous.csv": "771e5ddb3cc886813327336fecd8523f633e19c3a2b6f517196fc7c0e1202505",
+    "model_diagnostics_flicker_continuous.json": "9ad60f1fefee626ad6e931d677637fc2e2ca33284b807ac9d57778ee050fd2bf"
+  }
+}

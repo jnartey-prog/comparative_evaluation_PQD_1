@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/fit_preregistered_development_models.py"
-SPEC = importlib.util.spec_from_file_location("fit_preregistered_models", SCRIPT)
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts/fit_prespecified_development_models.py"
+SPEC = importlib.util.spec_from_file_location("fit_prespecified_models", SCRIPT)
 assert SPEC is not None and SPEC.loader is not None
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)

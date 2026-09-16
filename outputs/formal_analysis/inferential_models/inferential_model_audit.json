@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "formal_records_available": 80800,
+  "confirmation_records_read": 0,
+  "strata": [
+    "flicker",
+    "harmonics",
+    "impulsive_transient",
+    "interruption",
+    "notching",
+    "oscillatory_transient",
+    "sag",
+    "swell"
+  ],
+  "model_count": 17,
+  "diagnostic_pass_count": 11,
+  "fallback_required_count": 6,
+  "outputs_sha256": {
+    "fixed_effects.csv": "2af1689c1fef2547806abd650943ea2b60c3f74e4ad0416d65ce260eb4e87815",
+    "model_diagnostics.json": "ad804783bc9a8ecfa146870f6a52135107ad59aefc80f9a9aff3ab224416ef55"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "formal_records_available": 80800,
+  "confirmation_records_read": 0,
+  "mixed_models_requiring_fallback": 6,
+  "fallback_contrasts": 36,
+  "bootstrap_resamples": 2000,
+  "pairing_unit": "formal development condition",
+  "multiplicity": "Holm FWER within each stratum-model family",
+  "output_sha256": "21ce08d3de6c0e66c13e19fc1f78ddb0c907da8d2746e84eb6ee2936a8f5f84d"
+}

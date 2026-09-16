@@ -1,0 +1,35 @@
+{
+  "scope": "formal development only; no confirmation outcomes accessed",
+  "models": [
+    {
+      "stratum": "flicker",
+      "model_name": "continuous_error",
+      "model": "normalized_absolute_error ~ C(method, Treatment(reference='stft')) * snr_scaled + property_scaled + C(phase_deg) + (1|condition_id) + (1|noise_cluster)",
+      "all_record_n": 14400,
+      "finite_error_n": 14400,
+      "conditional_due_to_nonestimability": false,
+      "fallback_used": false,
+      "estimator": "maximum-likelihood linear mixed model",
+      "converged": true,
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "condition_random_intercept_variance": 0.004177284653553783,
+      "noise_seed_variance_component": 1.9915113648451306e-06,
+      "residual_variance": 0.008787703052697311,
+      "residual_diagnostics": {
+        "standardized_residual_mean": 1.1072624298928227e-15,
+        "standardized_residual_sd": 0.9987428234102941,
+        "standardized_residual_skew": 1.9431172745542185,
+        "standardized_residual_excess_kurtosis": 11.72651999737555,
+        "standardized_residual_q01": -1.8329230690943867,
+        "standardized_residual_q99": 3.6307114124836772,
+        "absolute_residual_fitted_spearman_rho": 0.05916464377998116,
+        "absolute_residual_fitted_spearman_p": 1.2000467182853863e-12
+      },
+      "diagnostic_pass": true,
+      "fallback_required": false
+    }
+  ]
+}

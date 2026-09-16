@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "formal_records_read": 80800,
+  "confirmation_records_read": 0,
+  "bootstrap_resamples": 2000,
+  "strata": 8,
+  "marginal_estimates": 32,
+  "pairwise_contrasts": 48,
+  "estimand": "conditional finite-estimate normalized absolute error",
+  "independent_resampling_unit": "formal development condition",
+  "multiplicity": "Holm FWER within each disturbance family",
+  "outputs_sha256": {
+    "continuous_error_bootstrap_marginals.csv": "2ca70bd2eb78e423eb80a25fb90d5e9b7117ab301818389a9450fdce76514ea1",
+    "continuous_error_bootstrap_contrasts.csv": "5bd459043e2be2ded659ed97a2f99bd2ea24aabb3e6f679dbdf2394e0777cd1a"
+  }
+}

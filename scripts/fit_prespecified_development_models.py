@@ -1,4 +1,4 @@
-"""Fit preregistered development-only mixed models with audited fallbacks."""
+"""Fit prespecified development-only mixed models with audited fallbacks."""
 
 from __future__ import annotations
 

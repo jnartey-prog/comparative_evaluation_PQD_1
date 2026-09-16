@@ -58,6 +58,10 @@ uv run python scripts/audit_generated_dataset.py
 uv run python scripts/analyze_property_response.py
 uv run python scripts/analyze_formal_development.py
 uv run python scripts/complete_development_gates.py
+uv run python scripts/fit_prespecified_development_models.py
+uv run python scripts/run_all_continuous_cluster_bootstrap.py
+uv run python scripts/run_prespecified_model_fallbacks.py
+uv run python scripts/run_primary_binary_cluster_bootstrap.py
 uv run python scripts/analyze_confirmation_holdout.py
 uv run python scripts/audit_qualification_matrix.py
 ```

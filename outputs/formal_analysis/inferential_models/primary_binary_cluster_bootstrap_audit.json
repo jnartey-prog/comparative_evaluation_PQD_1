@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "formal_records_read": 80800,
+  "confirmation_records_read": 0,
+  "bootstrap_resamples": 2000,
+  "families": 25,
+  "marginal_estimates": 100,
+  "pairwise_method_contrasts": 150,
+  "independent_resampling_unit": "formal development condition",
+  "primary_binary_estimator": "paired condition-cluster bootstrap marginal inference",
+  "bayesian_glmm_role": "supportive sensitivity only",
+  "multiplicity": "Holm FWER within each disturbance-outcome-tolerance family",
+  "outputs_sha256": {
+    "primary_binary_marginal_probabilities.csv": "9c0c2b3fdd45bf61fdcd9a97a6385bf212090a7fedb97759681d82253fb54ac4",
+    "primary_binary_method_contrasts.csv": "fcf7a5cf864b37a14fcca2d85d3e93317202ccfa3654d24944d9e20707e8bdd9"
+  }
+}

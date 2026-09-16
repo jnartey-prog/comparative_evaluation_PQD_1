@@ -25,6 +25,11 @@ Database records contain condition or realisation identifiers, disturbance strat
 - `physical_response_diagnostics.csv`: target-response, nuisance-response and margin evidence.
 - `snr_tolerance_sensitivity.csv`: tolerance-coverage summaries by signal-to-noise ratio.
 - `formal_development_summary.json`: complete structured development summary.
+- `inferential_models/`: mixed-model diagnostics, fixed-effect estimates and prespecified
+  condition-cluster-bootstrap summaries and contrasts.
+- `outputs/property_response_summary.csv`: noise-free property-response summaries.
+- `outputs/generated_dataset_audit.json`: persisted synthetic-dataset integrity audit.
+- `outputs/development_extraction_audit.json`: development feature-extraction completeness audit.
 
 ## Confirmation outputs
 
@@ -40,3 +45,7 @@ Database records contain condition or realisation identifiers, disturbance strat
 - `compound_descriptive_status.json`: status of the descriptive compound-event analyses.
 
 Structurally undefined values are not coded as zero. They reduce availability and count as failures in all-record tolerance coverage, while numerical bias and RMSE summaries describe finite estimates only.
+
+The immutable scientific-design configuration retains the legacy value
+`preregistered_modified_window`; in this release it denotes a prespecified candidate setting and
+does not assert registration in an external study registry.

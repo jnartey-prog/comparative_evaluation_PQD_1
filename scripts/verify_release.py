@@ -192,6 +192,52 @@ def check_qualification_matrix(failures: list[str]) -> int:
     return len(qualified)
 
 
+def check_supporting_outputs(failures: list[str]) -> int:
+    expected_audits = {
+        "outputs/generated_dataset_audit.json": {"records": 10_240},
+        "outputs/development_extraction_audit.json": {"actual_rows": 40_960},
+        "outputs/formal_analysis/inferential_models/inferential_model_audit.json": {
+            "model_count": 17,
+            "diagnostic_pass_count": 11,
+            "fallback_required_count": 6,
+            "confirmation_records_read": 0,
+        },
+        "outputs/formal_analysis/inferential_models/cluster_bootstrap_fallback_audit.json": {
+            "mixed_models_requiring_fallback": 6,
+            "bootstrap_resamples": 2_000,
+            "confirmation_records_read": 0,
+        },
+        "outputs/formal_analysis/inferential_models/continuous_error_cluster_bootstrap_audit.json": {
+            "strata": 8,
+            "bootstrap_resamples": 2_000,
+            "confirmation_records_read": 0,
+        },
+        "outputs/formal_analysis/inferential_models/primary_binary_cluster_bootstrap_audit.json": {
+            "families": 25,
+            "bootstrap_resamples": 2_000,
+            "confirmation_records_read": 0,
+        },
+    }
+    for relative_path, expected in expected_audits.items():
+        audit = load_json(relative_path)
+        if audit.get("status") != "PASS":
+            failures.append(f"supporting audit does not pass: {relative_path}")
+        for field, expected_value in expected.items():
+            if audit.get(field) != expected_value:
+                failures.append(
+                    f"supporting audit mismatch: {relative_path}: "
+                    f"{field}={audit.get(field)!r}, expected {expected_value!r}"
+                )
+
+    with (ROOT / "outputs/property_response_summary.csv").open(
+        newline="", encoding="utf-8-sig"
+    ) as handle:
+        property_rows = list(csv.DictReader(handle))
+    if len(property_rows) != 32:
+        failures.append(f"property-response summary row-count mismatch: {len(property_rows)}")
+    return len(expected_audits)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="Emit the verification report as JSON")
@@ -206,11 +252,13 @@ def main() -> int:
         check_database(relative_path, expected, failures)
     metrics = check_summaries(failures)
     qualified_count = check_qualification_matrix(failures)
+    supporting_audits = check_supporting_outputs(failures)
     report = {
         "status": "PASS" if not failures else "FAIL",
         "manifest_files_verified": manifest_rows,
         "databases_verified": len(DATABASE_EXPECTATIONS),
         "qualified_combinations": qualified_count,
+        "supporting_audits_verified": supporting_audits,
         "headline_metrics": metrics,
         "failures": failures,
     }
@@ -221,6 +269,7 @@ def main() -> int:
         print(f"Files verified: {manifest_rows}")
         print(f"SQLite databases verified: {len(DATABASE_EXPECTATIONS)}")
         print(f"Qualified combinations: {qualified_count} (expected: 1, flicker/STFT)")
+        print(f"Supporting analysis audits verified: {supporting_audits}")
         print(
             "STFT flicker standardized RMSE: "
             f"development={metrics['development_standardized_rmse']:.6f}, "
