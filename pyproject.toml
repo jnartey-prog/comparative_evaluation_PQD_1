@@ -23,9 +23,6 @@ scientific = ["scipy>=1.14,<2", "pandas>=2.2,<3", "statsmodels>=0.14,<1", "PyWav
 dev = ["pytest>=8,<9", "pytest-cov>=5,<7", "ruff>=0.6,<1", "mypy>=1.11,<2", "hatchling>=1.25,<2"]
 docs = ["sphinx>=8,<9", "myst-parser>=4,<5"]
 
-[project.scripts]
-tfpq-pipeline = "tfpq_qualifier.cli:main"
-
 [tool.hatch.build.targets.wheel]
 packages = ["src/tfpq_qualifier"]
 
