@@ -42,4 +42,4 @@ Use the metadata in `CITATION.cff`. Add the repository DOI after deposition and 
 
 ## Licence
 
-The software is distributed under the MIT License in `LICENSE`. Select and record an appropriate data licence when depositing the archive in a DOI-bearing repository.
+The software is distributed under the MIT License in `LICENSE`.
